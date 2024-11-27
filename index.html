@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apology Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #845ec2); /* Pink to Purple gradient */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .button-container {
+      display: flex;
+      gap: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+    .yes-btn {
+      background-color: #28a745;
+    }
+    .no-btn {
+      background-color: #dc3545;
+      position: absolute; /* Makes the No button jumpable */
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>I’m Really Sorry 😔</h1>
+  <p>Can you forgive me?</p>
+
+    <!-- Replace with your Access Key -->
+    
+  <div class="button-container">
+    <button class="yes-btn" onclick="showMessage('yes')">Yes 💖</button>
+    <button class="no-btn" id="noButton" onclick="showMessage('no')">No 😢</button>
+  </div>
+    <!-- Form Inputs. Each input must have a name="" attribute -->
+   
+
+
+    <!-- Custom Confirmation / Success Page -->
+    <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+    
+
+
+  <script>
+    const noButton = document.getElementById("noButton");
+
+    function showMessage(answer) {
+      if (answer === "yes") {
+        alert("Yay! Thank you so much! ❤️");
+      } else {
+        alert("Oh no! I’ll try harder to make it up to you. 💔");
+      }
+    }
+
+    noButton.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
